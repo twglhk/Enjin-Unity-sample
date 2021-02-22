@@ -1,0 +1,4 @@
+CreateUser|mutation createUser{{user:CreateEnjinUser(name:"{0}"){{id,name,identities{{id,app{{id,name,description,image}},linkingCode}},accessTokens,createdAt,updatedAt}}}}
+GetCurrentUser|query getCurrentUser{result:EnjinUser(me:true){id,name,identities{id,app{id},linkingCode,linkingCodeQr,wallet{ethAddress}},updatedAt,createdAt}}
+GetUserForId|query getUserForId{{result:EnjinUser(id:{0}){{id,name,identities{{id,app{{id}},linkingCode,linkingCodeQr,wallet{{ethAddress}}}},updatedAt,createdAt}}}}
+GetUserForName|query getUserForName{{result:EnjinUser(name:"{0}"){{id,name,identities{{id,app{{id}},linkingCode,linkingCodeQr,wallet{{ethAddress}}}},updatedAt,createdAt}}}}

@@ -1,0 +1,7 @@
+CreateIdentity|mutation createIdentity{{result:CreateEnjinIdentity(userId:{0},ethAddress:"{1}"){{id,app{{id}},user{{id}},wallet{{ethAddress}},linkingCode,updatedAt,createdAt}}}}
+GetIdentity|query getIdentity{{result:EnjinIdentities(id:{0}){{id,user{{id}},wallet{{ethAddress}},linkingCode,updatedAt,createdAt}}}}
+UpdateIdentity|mutation updateIdentity{{result:UpdateEnjinIdentity(id:{0},ethAddress:"{2}"){{id,app{{id}},user{{id}},wallet{{ethAddress}},linkingCode,updatedAt,createdAt}}}}
+UnlinkIdentity|mutation deleteIdentity{{result:UnlinkIdentity(id:{0}){{id,linkingCode,wallet{{ethAddress}}}}}}
+DeleteIdentity|mutation deleteIdentity{{result:DeleteEnjinIdentity(id:{0},unlink:false){{id,linkingCode,wallet{{ethAddress}}}}}}
+GetWalletBalances|query getWalletBalances{{result:EnjinWallet(ethAddress:"{0}"){{ethAddress,ethBalance,enjBalance,balances{{id,index,value}}}}}}
+GetWalletBalancesForApp|query getWalletBalancesForApp{{result:EnjinWallet(ethAddress:"{0}"){{ethAddress,ethBalance,enjBalance,balances(appId: {1}){{id,index,value}}}}}}

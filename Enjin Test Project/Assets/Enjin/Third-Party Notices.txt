@@ -1,0 +1,10 @@
+"This asset is governed by the Asset Store EULA; however, the following components are governed by the licenses indicated below:
+
+A. MiniJSON
+Custom License
+License: https://gist.github.com/darktable/1411710
+
+
+B. simpleJSON
+MIT
+https://github.com/simplejson/simplejson/blob/master/LICENSE.txt
