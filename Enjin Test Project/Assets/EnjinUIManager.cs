@@ -6,35 +6,68 @@ using UnityEngine.Events;
 
 public class EnjinUIManager : MonoBehaviour
 {
-    [SerializeField] Button _loginPlatformButton;
     [SerializeField] PlatformSelector _platformSelector;
+
+    [SerializeField] Canvas _loginAppCanvas;
+    [SerializeField] Button _loginAppButton;
     [SerializeField] InputField _appIdInputField;
     [SerializeField] InputField _appSecretInputField;
 
+    [SerializeField] Canvas _loginUserCanvas;
+    [SerializeField] Button _loginUserButton;
+    [SerializeField] InputField _userId;
+
+    [SerializeField] Text _accessToken;
+
+    public int EnjinAppId
+    {
+        get { return System.Convert.ToInt32(_appIdInputField.text); }
+    }
+
+    public string EnjinAppSecret
+    {
+        get { return _appSecretInputField.text; }
+    }
+
+    public string EnjinPlatformURL
+    {
+        get { return _platformSelector.GetPlatformURL(); }
+    }
+
+    public string UserId
+    {
+        get { return _userId.text; }
+    }
+
+    public string AccessToken
+    {
+        get { return _accessToken.text; }
+        set { _accessToken.text = value; }
+    }
+
     public void RegisterAppLoginEvent(UnityAction action)
     {
-        _loginPlatformButton.onClick.AddListener(action);
+        _loginAppButton.onClick.AddListener(action);
     }
 
-    public int GetAppId()
+    public void RegisterUserLoginEvent(UnityAction action)
     {
-        return System.Convert.ToInt32(_appIdInputField.text);
+        _loginUserButton.onClick.AddListener(action);
     }
 
-    public string GetAppSecret()
+    public void EnableUserLoginUI()
     {
-        return _appSecretInputField.text;
-    }
-
-    public string GetPlatformURL()
-    {
-        return _platformSelector.GetPlatformURL();
+        _loginUserCanvas.enabled = true;
     }
 
     public void DisableAppLoginUI()
     {
-        _loginPlatformButton.gameObject.SetActive(false);
-        _appIdInputField.gameObject.SetActive(false);
-        _appSecretInputField.gameObject.SetActive(false);
+        _loginAppCanvas.enabled = false;
+        _platformSelector.DisableInteractable();
+    }
+
+    public void DisableUserLoginUI()
+    {
+        _loginUserCanvas.enabled = false;
     }
 }

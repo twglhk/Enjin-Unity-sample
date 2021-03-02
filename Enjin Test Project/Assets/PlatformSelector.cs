@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class PlatformSelector : MonoBehaviour
 {
-    private readonly string _kovanURL = "https://kovan.cloud.enjin.io/";
-    private readonly string _mainnetURL = "https://cloud.enjin.io/";
+    private static readonly string _kovanURL = "https://kovan.cloud.enjin.io/";
+    private static readonly string _mainnetURL = "https://cloud.enjin.io/";
     [SerializeField] private Toggle _kovanToggle;
     [SerializeField] private Toggle _mainnetToggle;
 
@@ -21,5 +21,11 @@ public class PlatformSelector : MonoBehaviour
             Debug.LogError("Platform selection error");
             return null;
         }
+    }
+
+    public void DisableInteractable()
+    {
+        _kovanToggle.interactable = false;
+        _mainnetToggle.interactable = false;
     }
 }

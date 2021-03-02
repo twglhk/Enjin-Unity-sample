@@ -1,0 +1,23 @@
+query GetEnjinUser($name:String){
+  EnjinUser(name : $name){
+    id
+    name
+    isPlayer
+    identities{
+      id
+      linkingCodeQr
+    }
+  }
+}
+
+
+query GetIdentities($page: Int) {
+ EnjinIdentities(pagination: {page: $page, limit: 50}) {
+   id
+   linkingCode
+   linkingCodeQr
+   wallet {
+     ethAddress
+   }
+ }
+}
