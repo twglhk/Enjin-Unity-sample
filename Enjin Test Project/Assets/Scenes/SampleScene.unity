@@ -254,7 +254,7 @@ MonoBehaviour:
   _appSecretInputField: {fileID: 495213761}
   _loginUserCanvas: {fileID: 2063198226}
   _loginUserButton: {fileID: 333319681}
-  _userId: {fileID: 1270751649}
+  _userName: {fileID: 1270751649}
   _accessToken: {fileID: 1996448367}
 --- !u!1 &333319679
 GameObject:
@@ -1946,7 +1946,7 @@ GameObject:
   - component: {fileID: 1270751650}
   - component: {fileID: 1270751649}
   m_Layer: 5
-  m_Name: InputField_User_ID
+  m_Name: InputField_User_Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2681,7 +2681,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter ''User ID''
+  m_Text: Enter ''User Name'
 --- !u!222 &1889429421
 CanvasRenderer:
   m_ObjectHideFlags: 0

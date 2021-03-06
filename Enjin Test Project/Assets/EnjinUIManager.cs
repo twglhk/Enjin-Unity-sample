@@ -15,7 +15,7 @@ public class EnjinUIManager : MonoBehaviour
 
     [SerializeField] Canvas _loginUserCanvas;
     [SerializeField] Button _loginUserButton;
-    [SerializeField] InputField _userId;
+    [SerializeField] InputField _userName;
 
     [SerializeField] Text _accessToken;
 
@@ -36,7 +36,7 @@ public class EnjinUIManager : MonoBehaviour
 
     public string UserId
     {
-        get { return _userId.text; }
+        get { return _userName.text; }
     }
 
     public string AccessToken
