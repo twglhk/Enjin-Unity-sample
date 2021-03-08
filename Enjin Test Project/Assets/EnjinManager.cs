@@ -10,7 +10,7 @@ namespace Enjin.SDK.Core
     {
         [SerializeField] private EnjinUIManager _enjinUIManager;
 
-        User _developementUser = null;
+        User _currentEnjinUser = null;
         bool _isConnecting = false;
         string _accessToken = null;
 
@@ -38,20 +38,31 @@ namespace Enjin.SDK.Core
                 if (Enjin.LoginState != LoginState.VALID)
                     return;
 
-                _developementUser = Enjin.GetUser(_enjinUIManager.UserId);
-
-                if (_developementUser == null) return;
-
-                _enjinUIManager.DisableUserLoginUI();
-                Debug.Log($"[Logined User ID] {_developementUser.id}");
-                Debug.Log($"[Logined User name] {_developementUser.name}");
-
+                _currentEnjinUser = Enjin.GetUser(_enjinUIManager.UserName);
                 _accessToken = Enjin.AccessToken;
 
-                if (_accessToken == null) return;
+                Debug.Log($"[Logined User ID] {_currentEnjinUser.id}");
+                Debug.Log($"[Logined User name] {_currentEnjinUser.name}");
 
+                _enjinUIManager.UserName = _currentEnjinUser.name;
                 _enjinUIManager.AccessToken = _accessToken;
+                _enjinUIManager.DisableUserLoginUI();
             });
+
+            _enjinUIManager.RegisterGetIdentityEvent(() =>
+            {
+                if (Enjin.LoginState != LoginState.VALID)
+                    return;
+
+                for (int i = 0; i < _currentEnjinUser.identities.Length; ++i)
+                {
+                    Debug.Log($"[{i} Identity ID] {_currentEnjinUser.identities[i].id}");
+                    Debug.Log($"[{i} Identity linking Code] {_currentEnjinUser.identities[i].linkingCode}");
+                    Debug.Log($"[{i} Identity Wallet :: Eth Address] {_currentEnjinUser.identities[i].wallet.ethAddress}");
+                }
+            });
+
+            // TO DO : BindEvent from pusher
         }
 
         private IEnumerator AppLoginRoutine()
@@ -66,6 +77,7 @@ namespace Enjin.SDK.Core
                 if (Enjin.LoginState == LoginState.VALID)
                 {
                     Debug.Log("App auth success");
+                    _enjinUIManager.EnjinAppId = Enjin.AppID;
                     _enjinUIManager.DisableAppLoginUI();
                     _enjinUIManager.EnableUserLoginUI();
                     yield break;
@@ -75,7 +87,7 @@ namespace Enjin.SDK.Core
                 yield return waitASecond;
             }
 
-            Debug.Log("App auth Faild");
+            Debug.Log("App auth Failed");
             _isConnecting = false;
 
             yield return null;
