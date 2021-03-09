@@ -22,4 +22,6 @@ You can test Unity Enjin SDK with it.
  Next, you can mutate(create) or query identities. The identity is belong to user. 
  User can have many identities. Each identity has wallet address and linking code that connects to Enjin wallet using QR scan.
  Query Identites already added in the project, but mutate is not. I'll update as soon as possible.
-  
+ 
+
+ Updating.. 
