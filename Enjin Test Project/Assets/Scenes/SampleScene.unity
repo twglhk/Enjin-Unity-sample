@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 47482218}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 909ea265cb034584796e9f3e487e7fee, type: 3}
+  m_Script: {fileID: 11500000, guid: 885bb06a4ff5b2c4baf7fe6d83cd8ab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _platformSelector: {fileID: 900260471}
@@ -499,10 +499,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 362230489}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d127c529663c6745b424a78bdf581fd, type: 3}
+  m_Script: {fileID: 11500000, guid: dd73317dedfd8364a82dac9255f3d7fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enjinUIManager: {fileID: 47482220}
+  _enjinUIManager: {fileID: 0}
 --- !u!1 &410221232
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,6 +966,7 @@ MonoBehaviour:
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
+  m_ShouldActivateOnSelect: 1
 --- !u!114 &495213762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1673,7 +1674,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 900260469}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77ebd8bd1f5170f4087b748b040766c3, type: 3}
+  m_Script: {fileID: 11500000, guid: 9de7e61bd4037004aabaeb12aa66a211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _kovanToggle: {fileID: 416268074}
@@ -2218,6 +2219,7 @@ MonoBehaviour:
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
+  m_ShouldActivateOnSelect: 1
 --- !u!114 &1084205005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2633,6 +2635,7 @@ MonoBehaviour:
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
+  m_ShouldActivateOnSelect: 1
 --- !u!114 &1270751650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3884,7 +3887,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 725d76092947eea4ba11730ecbfde92a, type: 3}
+  m_Texture: {fileID: 2800000, guid: 5cfa143a6be986b4eb315b3718bf8daf, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
